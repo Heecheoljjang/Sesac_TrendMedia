@@ -11,6 +11,7 @@
 		9722BAAC2884FE4200AA57F5 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9722BAAB2884FE4200AA57F5 /* HomeTableViewController.swift */; };
 		9722BAAE28850FCE00AA57F5 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9722BAAD28850FCE00AA57F5 /* Setting.storyboard */; };
 		9722BAB02885251100AA57F5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9722BAAF2885251100AA57F5 /* SettingTableViewController.swift */; };
+		9722BAB22885BF9E00AA57F5 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9722BAB12885BF9E00AA57F5 /* FriendsTableViewController.swift */; };
 		9726F0472884DDBD00DCCE3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726F0462884DDBD00DCCE3D /* AppDelegate.swift */; };
 		9726F0492884DDBD00DCCE3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726F0482884DDBD00DCCE3D /* SceneDelegate.swift */; };
 		9726F04B2884DDBD00DCCE3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9726F04A2884DDBD00DCCE3D /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		9722BAAB2884FE4200AA57F5 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		9722BAAD28850FCE00AA57F5 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		9722BAAF2885251100AA57F5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		9722BAB12885BF9E00AA57F5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		9726F0432884DDBD00DCCE3D /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9726F0462884DDBD00DCCE3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9726F0482884DDBD00DCCE3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9722BAA92884F11800AA57F5 /* Home.storyboard */,
 				9722BAAF2885251100AA57F5 /* SettingTableViewController.swift */,
 				9722BAAD28850FCE00AA57F5 /* Setting.storyboard */,
+				9722BAB12885BF9E00AA57F5 /* FriendsTableViewController.swift */,
 			);
 			path = TrendMedia;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			files = (
 				9722BAAC2884FE4200AA57F5 /* HomeTableViewController.swift in Sources */,
 				9726F04B2884DDBD00DCCE3D /* ViewController.swift in Sources */,
+				9722BAB22885BF9E00AA57F5 /* FriendsTableViewController.swift in Sources */,
 				9726F0472884DDBD00DCCE3D /* AppDelegate.swift in Sources */,
 				9726F0492884DDBD00DCCE3D /* SceneDelegate.swift in Sources */,
 				9722BAB02885251100AA57F5 /* SettingTableViewController.swift in Sources */,
