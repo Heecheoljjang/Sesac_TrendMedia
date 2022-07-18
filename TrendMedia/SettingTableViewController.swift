@@ -38,15 +38,14 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        
         if indexPath.section == 0 {
             cell.textLabel?.text = whole[indexPath.row]
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         } else if indexPath.section == 1 {
             cell.textLabel?.text = personal[indexPath.row]
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         } else if indexPath.section == 2 {
             cell.textLabel?.text = other[indexPath.row]
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         }
         
         return cell
