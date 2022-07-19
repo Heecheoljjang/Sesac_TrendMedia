@@ -14,7 +14,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        tableView.rowHeight = 80 // 기본 44
         
     }
     
@@ -55,34 +55,56 @@ class HomeTableViewController: UITableViewController {
     
     // 2. 셀의 디자인과 데이터(필수)
     // ex. 카톡 이름, 프로필 사진, 상태 메세지 등
+    
+    // 재사용 메커니즘과 연결
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //테이블뷰에 셀 등록
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
-        if indexPath.section == 0 {
-//
-//            if indexPath.row == 0 {
-//                cell.textLabel?.text = birthdayFriends[0]
-//            } else if indexPath.row == 1 {
-//                cell.textLabel?.text = birthdayFriends[1]
-//            } else if indexPath.row == 2 {
-//                cell.textLabel.text = birthdayFriends[1]
-//            }
-            cell.textLabel?.text = birthdayFriends[indexPath.row]
-            cell.textLabel?.textColor = .tintColor
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = "ddd"
-            cell.textLabel?.textColor = .systemMint
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 2 {
+        print("cellForRowAt", indexPath)
+        
+        if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell")!
             cell.textLabel?.text = "aaaa"
             cell.textLabel?.textColor = .gray
             cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            cell.detailTextLabel?.text = "detailLabelYOYO"
+            
+            // 삼항연산자 사용
+            //indexPath.row % 2에 따라 조건 다르게 하기
+//            if indexPath.row % 2 == 0 {
+//                cell.imageView?.image = UIImage(systemName: "pencil")
+//                cell.backgroundColor = .lightGray
+//            } else {
+//                cell.imageView?.image = UIImage(systemName: "star")
+//                cell.backgroundColor = .blue
+//            }
+            cell.imageView?.image = indexPath.row % 2 == 0 ? UIImage(systemName: "pencil") : UIImage(systemName: "star")
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .blue
+
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+            if indexPath.section == 0 {
+                cell.textLabel?.text = birthdayFriends[indexPath.row]
+                cell.textLabel?.textColor = .tintColor
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            } else if indexPath.section == 1 {
+                cell.textLabel?.text = "ddd"
+                cell.textLabel?.textColor = .systemMint
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            }
+            return cell
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
+//        if indexPath.section == 0 {
+//            if indexPath.row == 0 {
+//                return 150
+//            }
+//        }
         
-        return cell
+        return 100
     }
 }
