@@ -69,7 +69,16 @@ class ShoppingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
-
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //배열 삭제후 테이블뷰 갱신
+            shoppingList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
     
     
 }
