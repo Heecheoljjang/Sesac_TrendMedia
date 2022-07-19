@@ -13,5 +13,4 @@ class BucketlistTableViewCell: UITableViewCell {
     @IBOutlet weak var bucketlistLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
 }

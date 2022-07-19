@@ -18,9 +18,6 @@ class BucketlistTableViewController: UITableViewController {
 
         tableView.rowHeight = 80
         
-        list.append("마녀")
-        list.append("123")
-        
     }
     
     
@@ -53,8 +50,7 @@ class BucketlistTableViewController: UITableViewController {
         if editingStyle == .delete {
             //배열 삭제후 테이블뷰 갱신
             list.remove(at: indexPath.row)
-            //tableView.reloadData()
-            tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .bottom)
+            tableView.reloadData()
         }
     }
 //    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
