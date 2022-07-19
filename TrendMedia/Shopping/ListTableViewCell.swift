@@ -13,12 +13,6 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var checkImg: UIImageView!
     @IBOutlet weak var cellView: UIView!
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-    }
-    
    
 
 }

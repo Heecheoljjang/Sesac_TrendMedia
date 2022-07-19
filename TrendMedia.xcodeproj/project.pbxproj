@@ -22,7 +22,6 @@
 		97633A9928864040005FE1B0 /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633A9828864040005FE1B0 /* Trend.storyboard */; };
 		97633A9B28864079005FE1B0 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633A9A28864079005FE1B0 /* Intro.storyboard */; };
 		97633A9D2886440D005FE1B0 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633A9C2886440D005FE1B0 /* TrendViewController.swift */; };
-		97633A9F28864416005FE1B0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633A9E28864416005FE1B0 /* SearchViewController.swift */; };
 		97633AA12886451F005FE1B0 /* UiViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AA02886451F005FE1B0 /* UiViewController+Extension.swift */; };
 		97633AA328864786005FE1B0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AA228864786005FE1B0 /* UITextField+Extension.swift */; };
 		97633AA528864B95005FE1B0 /* BucketlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AA428864B95005FE1B0 /* BucketlistTableViewController.swift */; };
@@ -30,7 +29,8 @@
 		97633AAD2886B37B005FE1B0 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633AAC2886B37B005FE1B0 /* Shopping.storyboard */; };
 		97633AAF2886B565005FE1B0 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AAE2886B565005FE1B0 /* ShoppingTableViewController.swift */; };
 		97633AB12886B580005FE1B0 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB02886B580005FE1B0 /* ListTableViewCell.swift */; };
-		97633AB32886B8AC005FE1B0 /* AddingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB22886B8AC005FE1B0 /* AddingTableViewCell.swift */; };
+		97633AB52886F86B005FE1B0 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB42886F86B005FE1B0 /* SearchTableViewController.swift */; };
+		97633AB92886F8E7005FE1B0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB82886F8E7005FE1B0 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,6 @@
 		97633A9828864040005FE1B0 /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
 		97633A9A28864079005FE1B0 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		97633A9C2886440D005FE1B0 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
-		97633A9E28864416005FE1B0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		97633AA02886451F005FE1B0 /* UiViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Extension.swift"; sourceTree = "<group>"; };
 		97633AA228864786005FE1B0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		97633AA428864B95005FE1B0 /* BucketlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketlistTableViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +58,8 @@
 		97633AAC2886B37B005FE1B0 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
 		97633AAE2886B565005FE1B0 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		97633AB02886B580005FE1B0 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		97633AB22886B8AC005FE1B0 /* AddingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingTableViewCell.swift; sourceTree = "<group>"; };
+		97633AB42886F86B005FE1B0 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		97633AB82886F8E7005FE1B0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,23 +92,21 @@
 		9726F0452884DDBD00DCCE3D /* TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
-				97633AAB2886B36A005FE1B0 /* Shopping */,
 				9726F0462884DDBD00DCCE3D /* AppDelegate.swift */,
 				9726F0482884DDBD00DCCE3D /* SceneDelegate.swift */,
+				9726F04F2884DDBD00DCCE3D /* Assets.xcassets */,
+				9726F0512884DDBD00DCCE3D /* LaunchScreen.storyboard */,
+				9726F0542884DDBD00DCCE3D /* Info.plist */,
+				97633AB62886F87C005FE1B0 /* Extension */,
+				97633AAB2886B36A005FE1B0 /* Shopping */,
+				97633AB72886F8CD005FE1B0 /* Search */,
 				9726F04A2884DDBD00DCCE3D /* ViewController.swift */,
 				9722BAAB2884FE4200AA57F5 /* HomeTableViewController.swift */,
 				9722BAA92884F11800AA57F5 /* Home.storyboard */,
 				9726F04C2884DDBD00DCCE3D /* Main.storyboard */,
-				9726F04F2884DDBD00DCCE3D /* Assets.xcassets */,
-				9726F0512884DDBD00DCCE3D /* LaunchScreen.storyboard */,
-				9726F0542884DDBD00DCCE3D /* Info.plist */,
 				9722BAAF2885251100AA57F5 /* SettingTableViewController.swift */,
 				9722BAAD28850FCE00AA57F5 /* Setting.storyboard */,
 				97633A9A28864079005FE1B0 /* Intro.storyboard */,
-				97633AA02886451F005FE1B0 /* UiViewController+Extension.swift */,
-				97633AA228864786005FE1B0 /* UITextField+Extension.swift */,
-				97633A9628864011005FE1B0 /* Search.storyboard */,
-				97633A9E28864416005FE1B0 /* SearchViewController.swift */,
 				97633A9828864040005FE1B0 /* Trend.storyboard */,
 				97633AA628864D8D005FE1B0 /* BucketlistTableViewCell.swift */,
 				97633AA428864B95005FE1B0 /* BucketlistTableViewController.swift */,
@@ -123,10 +121,28 @@
 			children = (
 				97633AAC2886B37B005FE1B0 /* Shopping.storyboard */,
 				97633AAE2886B565005FE1B0 /* ShoppingTableViewController.swift */,
-				97633AB22886B8AC005FE1B0 /* AddingTableViewCell.swift */,
 				97633AB02886B580005FE1B0 /* ListTableViewCell.swift */,
 			);
 			path = Shopping;
+			sourceTree = "<group>";
+		};
+		97633AB62886F87C005FE1B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				97633AA02886451F005FE1B0 /* UiViewController+Extension.swift */,
+				97633AA228864786005FE1B0 /* UITextField+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		97633AB72886F8CD005FE1B0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				97633A9628864011005FE1B0 /* Search.storyboard */,
+				97633AB42886F86B005FE1B0 /* SearchTableViewController.swift */,
+				97633AB82886F8E7005FE1B0 /* SearchTableViewCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,15 +225,15 @@
 				9722BAAC2884FE4200AA57F5 /* HomeTableViewController.swift in Sources */,
 				97633AA728864D8D005FE1B0 /* BucketlistTableViewCell.swift in Sources */,
 				9726F04B2884DDBD00DCCE3D /* ViewController.swift in Sources */,
-				97633A9F28864416005FE1B0 /* SearchViewController.swift in Sources */,
+				97633AB52886F86B005FE1B0 /* SearchTableViewController.swift in Sources */,
 				9722BAB22885BF9E00AA57F5 /* FriendsTableViewController.swift in Sources */,
 				97633AB12886B580005FE1B0 /* ListTableViewCell.swift in Sources */,
 				9726F0472884DDBD00DCCE3D /* AppDelegate.swift in Sources */,
 				97633AAF2886B565005FE1B0 /* ShoppingTableViewController.swift in Sources */,
 				97633AA328864786005FE1B0 /* UITextField+Extension.swift in Sources */,
+				97633AB92886F8E7005FE1B0 /* SearchTableViewCell.swift in Sources */,
 				97633A9D2886440D005FE1B0 /* TrendViewController.swift in Sources */,
 				9726F0492884DDBD00DCCE3D /* SceneDelegate.swift in Sources */,
-				97633AB32886B8AC005FE1B0 /* AddingTableViewCell.swift in Sources */,
 				9722BAB02885251100AA57F5 /* SettingTableViewController.swift in Sources */,
 				97633AA528864B95005FE1B0 /* BucketlistTableViewController.swift in Sources */,
 				97633AA12886451F005FE1B0 /* UiViewController+Extension.swift in Sources */,
@@ -372,7 +388,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -400,7 +416,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
+				INFOPLIST_KEY_UIMainStoryboardFile = Search;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
