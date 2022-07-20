@@ -18,6 +18,16 @@
 		9726F04E2884DDBD00DCCE3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9726F04C2884DDBD00DCCE3D /* Main.storyboard */; };
 		9726F0502884DDBD00DCCE3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9726F04F2884DDBD00DCCE3D /* Assets.xcassets */; };
 		9726F0532884DDBD00DCCE3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9726F0512884DDBD00DCCE3D /* LaunchScreen.storyboard */; };
+		97599B7628877FA300006FDC /* PracticeShopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97599B7528877FA300006FDC /* PracticeShopping.storyboard */; };
+		97599B7828877FBF00006FDC /* PracticeShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B7728877FBF00006FDC /* PracticeShoppingTableViewController.swift */; };
+		97599B7C288783C800006FDC /* PracticeSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97599B7B288783C800006FDC /* PracticeSearch.storyboard */; };
+		97599B7E2887840600006FDC /* PracticeSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B7D2887840600006FDC /* PracticeSearchTableViewController.swift */; };
+		97599B8028878C9E00006FDC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B7F28878C9E00006FDC /* Movie.swift */; };
+		97599B82288794A000006FDC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B81288794A000006FDC /* MovieInfo.swift */; };
+		97599B8428879AB500006FDC /* RecommandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B8328879AB500006FDC /* RecommandCollectionViewController.swift */; };
+		97599B8628879E0600006FDC /* RecommandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97599B8528879E0600006FDC /* RecommandCollectionViewCell.swift */; };
+		97599B892887AE3A00006FDC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 97599B882887AE3A00006FDC /* Kingfisher */; };
+		97599B8C2887AE6B00006FDC /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 97599B8B2887AE6B00006FDC /* Toast */; };
 		97633A9728864011005FE1B0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633A9628864011005FE1B0 /* Search.storyboard */; };
 		97633A9928864040005FE1B0 /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633A9828864040005FE1B0 /* Trend.storyboard */; };
 		97633A9B28864079005FE1B0 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97633A9A28864079005FE1B0 /* Intro.storyboard */; };
@@ -47,6 +57,14 @@
 		9726F04F2884DDBD00DCCE3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9726F0522884DDBD00DCCE3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9726F0542884DDBD00DCCE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97599B7528877FA300006FDC /* PracticeShopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeShopping.storyboard; sourceTree = "<group>"; };
+		97599B7728877FBF00006FDC /* PracticeShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeShoppingTableViewController.swift; sourceTree = "<group>"; };
+		97599B7B288783C800006FDC /* PracticeSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeSearch.storyboard; sourceTree = "<group>"; };
+		97599B7D2887840600006FDC /* PracticeSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSearchTableViewController.swift; sourceTree = "<group>"; };
+		97599B7F28878C9E00006FDC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		97599B81288794A000006FDC /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		97599B8328879AB500006FDC /* RecommandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewController.swift; sourceTree = "<group>"; };
+		97599B8528879E0600006FDC /* RecommandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewCell.swift; sourceTree = "<group>"; };
 		97633A9628864011005FE1B0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		97633A9828864040005FE1B0 /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
 		97633A9A28864079005FE1B0 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -67,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97599B8C2887AE6B00006FDC /* Toast in Frameworks */,
+				97599B892887AE3A00006FDC /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +128,8 @@
 				9722BAAD28850FCE00AA57F5 /* Setting.storyboard */,
 				97633A9A28864079005FE1B0 /* Intro.storyboard */,
 				97633A9828864040005FE1B0 /* Trend.storyboard */,
+				97599B8528879E0600006FDC /* RecommandCollectionViewCell.swift */,
+				97599B8328879AB500006FDC /* RecommandCollectionViewController.swift */,
 				97633AA628864D8D005FE1B0 /* BucketlistTableViewCell.swift */,
 				97633AA428864B95005FE1B0 /* BucketlistTableViewController.swift */,
 				97633A9C2886440D005FE1B0 /* TrendViewController.swift */,
@@ -116,9 +138,28 @@
 			path = TrendMedia;
 			sourceTree = "<group>";
 		};
+		97599B792887838200006FDC /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				97599B7528877FA300006FDC /* PracticeShopping.storyboard */,
+				97599B7728877FBF00006FDC /* PracticeShoppingTableViewController.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		97599B7A288783AC00006FDC /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				97599B7B288783C800006FDC /* PracticeSearch.storyboard */,
+				97599B7D2887840600006FDC /* PracticeSearchTableViewController.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
 		97633AAB2886B36A005FE1B0 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				97599B792887838200006FDC /* Practice */,
 				97633AAC2886B37B005FE1B0 /* Shopping.storyboard */,
 				97633AAE2886B565005FE1B0 /* ShoppingTableViewController.swift */,
 				97633AB02886B580005FE1B0 /* ListTableViewCell.swift */,
@@ -138,9 +179,12 @@
 		97633AB72886F8CD005FE1B0 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				97599B7A288783AC00006FDC /* Practice */,
 				97633A9628864011005FE1B0 /* Search.storyboard */,
 				97633AB42886F86B005FE1B0 /* SearchTableViewController.swift */,
 				97633AB82886F8E7005FE1B0 /* SearchTableViewCell.swift */,
+				97599B7F28878C9E00006FDC /* Movie.swift */,
+				97599B81288794A000006FDC /* MovieInfo.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -161,6 +205,10 @@
 			dependencies = (
 			);
 			name = TrendMedia;
+			packageProductDependencies = (
+				97599B882887AE3A00006FDC /* Kingfisher */,
+				97599B8B2887AE6B00006FDC /* Toast */,
+			);
 			productName = TrendMedia;
 			productReference = 9726F0432884DDBD00DCCE3D /* TrendMedia.app */;
 			productType = "com.apple.product-type.application";
@@ -189,6 +237,10 @@
 				Base,
 			);
 			mainGroup = 9726F03A2884DDBD00DCCE3D;
+			packageReferences = (
+				97599B872887AE3A00006FDC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				97599B8A2887AE6B00006FDC /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			productRefGroup = 9726F0442884DDBD00DCCE3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -204,8 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97633A9928864040005FE1B0 /* Trend.storyboard in Resources */,
+				97599B7C288783C800006FDC /* PracticeSearch.storyboard in Resources */,
 				9726F0532884DDBD00DCCE3D /* LaunchScreen.storyboard in Resources */,
 				9726F0502884DDBD00DCCE3D /* Assets.xcassets in Resources */,
+				97599B7628877FA300006FDC /* PracticeShopping.storyboard in Resources */,
 				97633A9B28864079005FE1B0 /* Intro.storyboard in Resources */,
 				9722BAAE28850FCE00AA57F5 /* Setting.storyboard in Resources */,
 				9726F04E2884DDBD00DCCE3D /* Main.storyboard in Resources */,
@@ -223,10 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9722BAAC2884FE4200AA57F5 /* HomeTableViewController.swift in Sources */,
+				97599B82288794A000006FDC /* MovieInfo.swift in Sources */,
 				97633AA728864D8D005FE1B0 /* BucketlistTableViewCell.swift in Sources */,
+				97599B8028878C9E00006FDC /* Movie.swift in Sources */,
 				9726F04B2884DDBD00DCCE3D /* ViewController.swift in Sources */,
 				97633AB52886F86B005FE1B0 /* SearchTableViewController.swift in Sources */,
 				9722BAB22885BF9E00AA57F5 /* FriendsTableViewController.swift in Sources */,
+				97599B8428879AB500006FDC /* RecommandCollectionViewController.swift in Sources */,
 				97633AB12886B580005FE1B0 /* ListTableViewCell.swift in Sources */,
 				9726F0472884DDBD00DCCE3D /* AppDelegate.swift in Sources */,
 				97633AAF2886B565005FE1B0 /* ShoppingTableViewController.swift in Sources */,
@@ -236,6 +293,9 @@
 				9726F0492884DDBD00DCCE3D /* SceneDelegate.swift in Sources */,
 				9722BAB02885251100AA57F5 /* SettingTableViewController.swift in Sources */,
 				97633AA528864B95005FE1B0 /* BucketlistTableViewController.swift in Sources */,
+				97599B7828877FBF00006FDC /* PracticeShoppingTableViewController.swift in Sources */,
+				97599B7E2887840600006FDC /* PracticeSearchTableViewController.swift in Sources */,
+				97599B8628879E0600006FDC /* RecommandCollectionViewCell.swift in Sources */,
 				97633AA12886451F005FE1B0 /* UiViewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +448,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Search;
+				INFOPLIST_KEY_UIMainStoryboardFile = Intro;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,7 +476,7 @@
 				INFOPLIST_FILE = TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Search;
+				INFOPLIST_KEY_UIMainStoryboardFile = Intro;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,6 +514,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97599B872887AE3A00006FDC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		97599B8A2887AE6B00006FDC /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97599B882887AE3A00006FDC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97599B872887AE3A00006FDC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		97599B8B2887AE6B00006FDC /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97599B8A2887AE6B00006FDC /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9726F03B2884DDBD00DCCE3D /* Project object */;
 }
