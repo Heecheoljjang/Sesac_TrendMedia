@@ -26,7 +26,7 @@ class SearchTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identity, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         
         let data = movieList.movie[indexPath.row]
         

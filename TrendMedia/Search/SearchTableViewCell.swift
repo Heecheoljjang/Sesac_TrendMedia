@@ -9,6 +9,8 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
+    static let identity = "SearchTableViewCell"
+    
     @IBOutlet weak var thumbnailImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
