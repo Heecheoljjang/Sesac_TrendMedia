@@ -9,6 +9,8 @@ import UIKit
 
 class BucketlistTableViewController: UITableViewController {
 
+    static let identifier = "BucketlistTableViewController"
+    
     @IBOutlet weak var userTextField: UITextField!
     
     var list = ["범죄도시2", "탑건", "토르"]
@@ -16,15 +18,34 @@ class BucketlistTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 위에 네비게이션바를 설정
+        navigationItem.title = "도서"
+        //거의 style로 씀
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeBtnClicked))
+        
+        
         tableView.rowHeight = 80
         
     }
     
-    
+    @objc func closeBtnClicked() {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func userTextFieldReturn(_ sender: UITextField) {
         
-        list.append(userTextField.text!)
+        if let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count) {
+            list.append(value)
+        } else {
+            self.view.makeToast("다시")
+        }
+        
+        guard let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty, (2...6).contains(value.count) else {
+            // 알럿같은거 추가해도됨
+            return
+        }
+        
+        
         print(list)
         
         tableView.reloadData()
@@ -36,7 +57,7 @@ class BucketlistTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BucketlistTableViewCell", for: indexPath) as! BucketlistTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: BucketlistTableViewCell.identifier, for: indexPath) as! BucketlistTableViewCell
         
         cell.bucketlistLabel.text = list[indexPath.row]
         cell.bucketlistLabel.font = UIFont.boldSystemFont(ofSize: 18)

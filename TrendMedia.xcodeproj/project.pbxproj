@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970EA6A52888E75500D4714F /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EA6A42888E75500D4714F /* TrendTableViewController.swift */; };
 		9722BAAA2884F11800AA57F5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9722BAA92884F11800AA57F5 /* Home.storyboard */; };
 		9722BAAC2884FE4200AA57F5 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9722BAAB2884FE4200AA57F5 /* HomeTableViewController.swift */; };
 		9722BAAE28850FCE00AA57F5 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9722BAAD28850FCE00AA57F5 /* Setting.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970EA6A42888E75500D4714F /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		9722BAA92884F11800AA57F5 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9722BAAB2884FE4200AA57F5 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		9722BAAD28850FCE00AA57F5 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				9722BAAD28850FCE00AA57F5 /* Setting.storyboard */,
 				97633A9A28864079005FE1B0 /* Intro.storyboard */,
 				97633A9828864040005FE1B0 /* Trend.storyboard */,
+				970EA6A42888E75500D4714F /* TrendTableViewController.swift */,
 				97599B8528879E0600006FDC /* RecommandCollectionViewCell.swift */,
 				97599B8328879AB500006FDC /* RecommandCollectionViewController.swift */,
 				97633AA628864D8D005FE1B0 /* BucketlistTableViewCell.swift */,
@@ -285,6 +288,7 @@
 				9722BAB22885BF9E00AA57F5 /* FriendsTableViewController.swift in Sources */,
 				97599B8428879AB500006FDC /* RecommandCollectionViewController.swift in Sources */,
 				97633AB12886B580005FE1B0 /* ListTableViewCell.swift in Sources */,
+				970EA6A52888E75500D4714F /* TrendTableViewController.swift in Sources */,
 				9726F0472884DDBD00DCCE3D /* AppDelegate.swift in Sources */,
 				97633AAF2886B565005FE1B0 /* ShoppingTableViewController.swift in Sources */,
 				97633AA328864786005FE1B0 /* UITextField+Extension.swift in Sources */,

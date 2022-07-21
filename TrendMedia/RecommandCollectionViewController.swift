@@ -13,6 +13,8 @@ private let reuseIdentifier = "Cell"
 
 class RecommandCollectionViewController: UICollectionViewController {
 
+    static let identity = "RecommandCollectionViewController"
+    
     var imgURL = "https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20220509_176%2F1652081912471yhg3N_JPEG%2Fmovie_image.jpg"
     
     override func viewDidLoad() {
@@ -49,7 +51,12 @@ class RecommandCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        self.view.makeToast("\(indexPath.item)번째 셀을 선택", duration: 1, position: .center, title: "123", image: nil, completion: nil)
+        self.view.makeToast("\(indexPath.item)번째 셀을 선택", duration: 0.1, position: .center, title: "123", image: nil) { _ in
+            
+            self.navigationController?.popViewController(animated: true)
+
+        }
+        
         
     }
 

@@ -38,5 +38,14 @@ class SearchTableViewController: UITableViewController {
         //return CGFloat(120)
         return UIScreen.main.bounds.height / 8
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
+        let sb = UIStoryboard(name: "Trend", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: RecommandCollectionViewController.identity) as? RecommandCollectionViewController else { return }
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
