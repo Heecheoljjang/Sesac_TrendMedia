@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreMIDI
 
 struct Movie {
     
@@ -17,4 +18,3 @@ struct Movie {
     var rate: Double
     
 }
-

@@ -13,7 +13,7 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var addBtn: UIButton!
     
-    var shoppingList: [String] = []
+    var shoppingList: [ShoppingModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ShoppingTableViewController: UITableViewController {
         
         if let text = userTextField.text {
             if text != "" {
-                shoppingList.append(text)
+                shoppingList.append(ShoppingModel(content: text))
                 tableView.reloadData()
             }
         }
@@ -49,16 +49,28 @@ class ShoppingTableViewController: UITableViewController {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identity, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
-        cell.checkImg.tintColor = .black
-        cell.likeBtn.tintColor = .black
-        cell.cellView.backgroundColor = .systemGray6
-        cell.cellView.layer.cornerRadius = 10
-        cell.listLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        cell.likeBtn.tag = indexPath.row
+        cell.checkButton.tag = indexPath.row
         
-    
-        cell.listLabel.text = shoppingList[indexPath.row]
+        cell.likeBtn.addTarget(self, action: #selector(tapLikeButton(_:)), for: .touchUpInside)
+        cell.checkButton.addTarget(self, action: #selector(tapCheckButton(_:)), for: .touchUpInside)
+        
+        cell.listLabel.text = shoppingList[indexPath.row].content
+        
+        shoppingList[indexPath.row].isChecked ? cell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal) : cell.checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        shoppingList[indexPath.row].isLiked ? cell.likeBtn.setImage(UIImage(systemName: "star.fill"), for: .normal) : cell.likeBtn.setImage(UIImage(systemName: "star"), for: .normal)
         
         return cell
+    }
+    
+    @objc func tapLikeButton(_ sender: UIButton) {
+        shoppingList[sender.tag].isLiked = !shoppingList[sender.tag].isLiked
+        tableView.reloadData()
+    }
+    
+    @objc func tapCheckButton(_ sender: UIButton) {
+        shoppingList[sender.tag].isChecked = !shoppingList[sender.tag].isChecked
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

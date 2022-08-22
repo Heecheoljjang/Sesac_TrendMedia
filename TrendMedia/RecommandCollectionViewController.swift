@@ -15,10 +15,18 @@ class RecommandCollectionViewController: UICollectionViewController {
 
     static let identity = "RecommandCollectionViewController"
     
-    var imgURL = "https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20220509_176%2F1652081912471yhg3N_JPEG%2Fmovie_image.jpg"
+    // 1. 값 전달 - 데이터를 받을 공간(프로퍼티)생성
+    
+    var movieData: Movie? 
+    
+//    var imgURL = "https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20220509_176%2F1652081912471yhg3N_JPEG%2Fmovie_image.jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 3. 값 전달 - 프로퍼티 값을 뷰에 표현
+        title = movieData?.title
+        
         
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8

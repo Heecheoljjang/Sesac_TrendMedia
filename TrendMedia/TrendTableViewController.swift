@@ -22,6 +22,8 @@ class TrendTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as? BucketlistTableViewController else { return }
         
+        vc.placeholder = "영화를 입력하세요"
+        
         self.present(vc, animated: true, completion: nil)
         
     }
@@ -30,6 +32,9 @@ class TrendTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: BucketlistTableViewController.identifier) as? BucketlistTableViewController else { return }
         vc.modalPresentationStyle = .fullScreen
+        
+        vc.placeholder = "드라마를 입력하세요"
+
         
         self.present(vc, animated: true, completion: nil)
     }
@@ -40,6 +45,9 @@ class TrendTableViewController: UITableViewController {
         
         //네비게이션 임베드해서 네비게이션바 보여지게하기
         let nav = UINavigationController(rootViewController: vc)
+        
+        vc.placeholder = sender.titleLabel?.text
+
         
         //풀스크린이 동작하지않음. vc에 스타일을 맞췄기때문
         nav.modalPresentationStyle = .fullScreen

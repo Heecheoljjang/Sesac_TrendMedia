@@ -13,10 +13,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        // 이런 조건은 다른 화면에 있어야할듯. 일단 확인하기위해 여기서 해보는거
+//        UserDefaults.standard.set(false, forKey: "First") // 참이면 Start, 거짓이면 SearchMovieTableVC
+//
+//
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//
+//        if UserDefaults.standard.bool(forKey: "First") {
+//
+//
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            guard let vc = sb.instantiateViewController(withIdentifier: "BucketlistTableViewController") as? BucketlistTableViewController else { return }
+//
+//            window?.rootViewController = vc
+//
+//            window?.makeKeyAndVisible() // 윈도우가 보여지도록
+//        } else {
+//
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            guard let vc = sb.instantiateViewController(withIdentifier: "BucketlistTableViewController") as? BucketlistTableViewController else { return }
+//
+//            window?.rootViewController = UINavigationController(rootViewController: vc)
+//
+//            window?.makeKeyAndVisible() // 윈도우가 보여지도록
+//        }
         guard let _ = (scene as? UIWindowScene) else { return }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
