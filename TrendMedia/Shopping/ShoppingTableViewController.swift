@@ -31,6 +31,30 @@ class ShoppingTableViewController: UITableViewController {
         
         tasks = localRealm.objects(ShoppingList.self)
         
+        let menuItems: [UIAction] = [
+            UIAction(title: "글자 순 정렬", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "content", ascending: true)
+                self.tableView.reloadData()
+            }), UIAction(title: "완료", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                self.tasks = self.localRealm.objects(ShoppingList.self).where {
+                    $0.isChecked == true
+                }
+                self.tableView.reloadData()
+
+            }),UIAction(title: "즐겨찾기", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                self.tasks = self.localRealm.objects(ShoppingList.self).where {
+                    $0.isLiked == true
+                }
+                self.tableView.reloadData()
+
+            })
+        ]
+        
+        let menu = UIMenu(identifier: nil, options: .displayInline, children: menuItems)
+        
+        let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), primaryAction: nil, menu: menu)
+        
+        navigationItem.leftBarButtonItem = button
     }
     
     @IBAction func tapAddBtn(_ sender: Any) {
