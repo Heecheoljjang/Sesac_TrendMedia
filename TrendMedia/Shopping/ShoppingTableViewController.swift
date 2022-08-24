@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import PhotosUI
 import RealmSwift
 
 class ShoppingTableViewController: UITableViewController {
@@ -14,11 +14,14 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var myImageView: UIImageView!
     
     //var shoppingList: [ShoppingModel] = []
     var tasks: Results<ShoppingList>!
     
     let localRealm = try! Realm()
+    
+    var pickedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,22 @@ class ShoppingTableViewController: UITableViewController {
         let button = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), primaryAction: nil, menu: menu)
         
         navigationItem.leftBarButtonItem = button
+        
+        let imagePickButton = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(presentImagePicker))
+        
+        navigationItem.rightBarButtonItem = imagePickButton
+        
+    }
+    
+    @objc func presentImagePicker() {
+    
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 1
+        configuration.filter = .any(of: [.images])
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
     @IBAction func tapAddBtn(_ sender: Any) {
@@ -66,13 +85,61 @@ class ShoppingTableViewController: UITableViewController {
                 
                 try! localRealm.write {
                     localRealm.add(task) //실질적으로 create
+                    
                     print("succeed", localRealm.configuration.fileURL!)
                 }
                 tasks = localRealm.objects(ShoppingList.self)
+                
+                guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+                
+                let fileURL = documentDirectory.appendingPathComponent("\(task.objectID).jpg")
+                guard let data = self.pickedImage?.jpegData(compressionQuality: 0.3) else { return }
+                
+                do {
+                    try data.write(to: fileURL)
+                } catch let error {
+                    print(error)
+                }
+        
                 tableView.reloadData()
             }
         }
         userTextField.text = ""
+        pickedImage = nil
+    }
+    
+    func loadImageFromDocument(fileName: String) -> UIImage? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil } //document 경로까지 가져오는것
+        let fileURL = documentDirectory.appendingPathComponent(fileName) //세부경로
+        // url에 이미지가 존재하는지 확인 후 없으면 기본이미지
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            return UIImage(contentsOfFile: fileURL.path)
+        } else {
+            return UIImage(systemName: "star.fill")
+        }
+    }
+    
+    func removeImageFromDocument(fileName: String) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //document 경로까지 가져오는것
+        let fileURL = documentDirectory.appendingPathComponent(fileName) //세부경로
+        
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func saveImageToDocument(fileName: String, image: UIImage) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return } //document 경로까지 가져오는것
+        let fileURL = documentDirectory.appendingPathComponent(fileName) //세부경로. 즉, /Documents/fileName 이미지를 저장할 위치
+        guard let data = image.jpegData(compressionQuality: 0.5) else { return } //압축
+        
+        do {
+            try data.write(to: fileURL) // try 저장될때가지 쭉 시도함 -> 다른 코드들보다 우선순위 두는 느낌
+        } catch let error {
+            print("저장 실패", error)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -98,6 +165,14 @@ class ShoppingTableViewController: UITableViewController {
         
         tasks[indexPath.row].isChecked ? cell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal) : cell.checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         tasks[indexPath.row].isLiked ? cell.likeBtn.setImage(UIImage(systemName: "star.fill"), for: .normal) : cell.likeBtn.setImage(UIImage(systemName: "star"), for: .normal)
+        
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UITableViewCell() } //document 경로까지 가져오는것
+        let fileURL = documentDirectory.appendingPathComponent("\(tasks[indexPath.row].objectID).jpg") //세부경로
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            cell.myImageView.image = UIImage(contentsOfFile: fileURL.path)
+        } else {
+            cell.myImageView.image = UIImage(systemName: "star.fill")
+        }
         
         return cell
     }
@@ -147,7 +222,31 @@ class ShoppingTableViewController: UITableViewController {
         }
         delete.image = UIImage(systemName: "trash")
         
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UISwipeActionsConfiguration(actions: [])} //document 경로까지 가져오는것
+        let fileURL = documentDirectory.appendingPathComponent("\(tasks[indexPath.row].objectID).jpg") //세부경로
+        
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch let error {
+            print(error)
+        }
+        
         return UISwipeActionsConfiguration(actions: [delete])
     }
     
+}
+
+extension ShoppingTableViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        picker.dismiss(animated: true)
+        
+        let itemProvider =  results.first?.itemProvider
+        
+        itemProvider?.loadObject(ofClass: UIImage.self) { image, error in
+            let image = image as? UIImage
+            self.pickedImage = image
+        }
+    }
 }

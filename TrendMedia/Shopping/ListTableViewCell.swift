@@ -15,6 +15,7 @@ class ListTableViewCell: UITableViewCell {
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var myImageView: UIImageView!
     
     override func awakeFromNib() {
         cellView.backgroundColor = .systemGray6
