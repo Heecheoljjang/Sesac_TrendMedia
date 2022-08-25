@@ -94,8 +94,15 @@ class ShoppingTableViewController: UITableViewController {
                 
 
             }), UIAction(title: "데이터 복구", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                   
+                //도큐먼트피커 띄우기
+                let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
                 
-
+                documentPicker.delegate = self
+                documentPicker.allowsMultipleSelection = false
+                
+                self.present(documentPicker, animated: false)
+         
             })
         ]
         
@@ -307,3 +314,58 @@ extension ShoppingTableViewController: PHPickerViewControllerDelegate {
     }
 }
 
+extension ShoppingTableViewController: UIDocumentPickerDelegate {
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("cancel")
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        
+        //선택한 파일 경로
+        guard let selectedFileURL = urls.first else { return } //하나만 골랐기때문에 first로 바로 접근 가능한듯
+        
+        //도큐먼트 위치
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let sandboxURL = documentDirectory.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        //파일이 존재하는지 확인
+        print(sandboxURL)
+        print(FileManager.default.fileExists(atPath: sandboxURL.path))
+        if FileManager.default.fileExists(atPath: sandboxURL.path) {
+            //존재한다면 압축해제
+            //명시적으로 나타내기위해
+            let fileURL = documentDirectory.appendingPathComponent("ShoppingList.zip")
+            
+            do {
+                try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
+                    print(progress)
+                }, fileOutputHandler: { unzippedFile in
+                    print("복구완료")
+                    
+                })
+            } catch let error {
+                print(error)
+            }
+        } else {
+            // 파일앱에서 고른 파일이 도큐먼트디렉토리에 없는 것이므로 파일앱에서 복사해온뒤 압축을 풀어주면됨.
+            do {
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxURL)
+                //파일압축해제
+                let fileURL = documentDirectory.appendingPathComponent("ShoppingList.zip")
+                
+                try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
+                    print(progress)
+                }, fileOutputHandler: { unzippedFile in
+                    print("복구완료")
+                    
+                })
+            } catch let error {
+                print(error)
+            }
+            
+        }
+    }
+    
+}
