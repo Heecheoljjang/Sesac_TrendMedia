@@ -42,6 +42,7 @@
 		97633AB12886B580005FE1B0 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB02886B580005FE1B0 /* ListTableViewCell.swift */; };
 		97633AB52886F86B005FE1B0 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB42886F86B005FE1B0 /* SearchTableViewController.swift */; };
 		97633AB92886F8E7005FE1B0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97633AB82886F8E7005FE1B0 /* SearchTableViewCell.swift */; };
+		977A3FA328B7B08100B0E342 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 977A3FA228B7B08100B0E342 /* Zip */; };
 		977DC75B288A3F9200C0A253 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DC75A288A3F9200C0A253 /* StartViewController.swift */; };
 		97A1928328B3905A0053E452 /* ShoppingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A1928228B3905A0053E452 /* ShoppingModel.swift */; };
 		97A1928628B394A40053E452 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 97A1928528B394A40053E452 /* Realm */; };
@@ -98,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977A3FA328B7B08100B0E342 /* Zip in Frameworks */,
 				97A1928828B394A40053E452 /* RealmSwift in Frameworks */,
 				97A1928628B394A40053E452 /* Realm in Frameworks */,
 				97599B8C2887AE6B00006FDC /* Toast in Frameworks */,
@@ -232,6 +234,7 @@
 				97A1928528B394A40053E452 /* Realm */,
 				97A1928728B394A40053E452 /* RealmSwift */,
 				97BA742D28B5FA7A008458DF /* SnapKit */,
+				977A3FA228B7B08100B0E342 /* Zip */,
 			);
 			productName = TrendMedia;
 			productReference = 9726F0432884DDBD00DCCE3D /* TrendMedia.app */;
@@ -266,6 +269,7 @@
 				97599B8A2887AE6B00006FDC /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				97A1928428B394A40053E452 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				97BA742C28B5FA7A008458DF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				977A3FA128B7B08100B0E342 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 9726F0442884DDBD00DCCE3D /* Products */;
 			projectDirPath = "";
@@ -563,6 +567,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		977A3FA128B7B08100B0E342 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		97A1928428B394A40053E452 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -591,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 97599B8A2887AE6B00006FDC /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		977A3FA228B7B08100B0E342 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 977A3FA128B7B08100B0E342 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		97A1928528B394A40053E452 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

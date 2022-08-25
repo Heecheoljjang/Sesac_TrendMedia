@@ -8,6 +8,7 @@
 import UIKit
 import PhotosUI
 import RealmSwift
+import Zip
 
 class ShoppingTableViewController: UITableViewController {
     
@@ -50,6 +51,51 @@ class ShoppingTableViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
 
+            }), UIAction(title: "데이터 백업", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                
+                var urlPaths: [URL] = []
+                
+                //도큐먼트 경로 구하기
+                guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+                
+                //렘 압축
+                //렘 파일의 이름을 알고있음. 그래서
+                let realmFile = documentDirectory.appendingPathComponent("default.realm")
+                
+                //파일 있는지 확인
+                guard FileManager.default.fileExists(atPath: realmFile.path) else {
+                    self.showAlert(title: "파일 없음.")
+                    return
+                }
+                
+                //파일이 잇다면 배열에 저장
+                urlPaths.append(URL(string: realmFile.path)!)
+                
+                //파일 압축
+                do {
+                    //url배열 안에 있는 파일들을 압축하는 듯
+                    let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "ShoppingList", progress: { progress in
+                        print("progress: \(progress)")
+                       
+                    })
+                    print("location: \(zipFilePath.lastPathComponent)")
+                    
+                    //액티비티 컨트롤러 띄우기
+                    
+                    //백업 파일 확인 -> 압축 파일 이름을 이미 알고있음.
+                    let backupFileURL = documentDirectory.appendingPathComponent("ShoppingList.zip")
+                    
+                    let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+                    self.present(vc, animated: true)
+                    
+                } catch let error {
+                    print(error)
+                }
+                
+
+            }), UIAction(title: "데이터 복구", image: nil, identifier: nil, discoverabilityTitle: nil, handler: { action in
+                
+
             })
         ]
         
@@ -85,27 +131,37 @@ class ShoppingTableViewController: UITableViewController {
                 
                 try! localRealm.write {
                     localRealm.add(task) //실질적으로 create
-                    
+                    tasks = localRealm.objects(ShoppingList.self)
                     print("succeed", localRealm.configuration.fileURL!)
                 }
-                tasks = localRealm.objects(ShoppingList.self)
-                
+            
                 guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
                 
                 let fileURL = documentDirectory.appendingPathComponent("\(task.objectID).jpg")
-                guard let data = self.pickedImage?.jpegData(compressionQuality: 0.3) else { return }
-                
+        
+                guard let data = self.pickedImage?.jpegData(compressionQuality: 0.3) else {
+                    
+                    //사진이 없는 경우
+                    userTextField.text = ""
+                    pickedImage = nil
+                    tableView.reloadData()
+                    
+                    return
+                }
+                //사진 있으면 저장
                 do {
                     try data.write(to: fileURL)
+                    print("imagedone")
                 } catch let error {
                     print(error)
                 }
-        
-                tableView.reloadData()
+                
             }
+            
         }
         userTextField.text = ""
         pickedImage = nil
+        tableView.reloadData()
     }
     
     func loadImageFromDocument(fileName: String) -> UIImage? {
@@ -250,3 +306,4 @@ extension ShoppingTableViewController: PHPickerViewControllerDelegate {
         }
     }
 }
+
